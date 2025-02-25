@@ -1,0 +1,5 @@
+template: entity_button
+hold_action:
+  action: more-info
+double_tap_action:
+  action: more-info

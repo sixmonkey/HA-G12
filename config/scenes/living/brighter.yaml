@@ -1,0 +1,27 @@
+id: living_brighter
+name: living_brighter
+entities:
+  light.living_ceiling_1:
+    state: true
+    brightness: 255
+    color_mode: color_temp
+    color_temp: 140
+
+  light.living_desk_2:
+    state: true
+
+  light.living_desk_1:
+    state: true
+    brightness: 255
+
+  light.living_wall_1:
+    state: true
+    brightness: 255
+    color_mode: "rgb"
+    rgb_color:
+      - 255
+      - 206
+      - 166
+
+  switch.living_adaptive_lighting:
+    state: false

@@ -1,0 +1,39 @@
+aspect_ratio: 1/1
+show_state: false
+show_name: false
+styles:
+  card:
+    - border-radius: 100%
+    - opacity: .8
+  img_cell:
+    - width: 100%
+    - height: 100%
+    - position: absolute
+    - top: 0
+    - left: 0
+    - opacity: .3
+  grid:
+    - display: flex
+    - justify-content: center
+    - align-items: center
+  icon:
+    - color: var(--paper-item-icon-color)
+    - width: 50%
+    - height: 50%
+  state:
+    - font-weight: 600
+    - max-width: 80%
+    - text-overflow: ellipsis
+    - white-space: nowrap
+    - overflow: hidden
+state:
+  - value: 'off'
+    styles:
+      img_cell:
+        - opacity: .7
+  - value: 'on'
+    styles:
+      img_cell:
+        - opacity:
+      icon:
+        - color: var(--paper-item-icon-color);

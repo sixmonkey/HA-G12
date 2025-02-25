@@ -1,0 +1,12 @@
+template: entity_button
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      browser_id: THIS
+      title: '[[[ return entity.attributes.friendly_name ]]]'
+      size: fullscreen
+      content:
+        type: custom:tv-card
+        entity: sun.sun

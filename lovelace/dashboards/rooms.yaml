@@ -1,0 +1,21 @@
+title: Home
+
+swipe_nav:
+  wrap: false
+  animate: swipe
+  prevent_default: true
+  swipe_amount: 30
+
+views:
+  - icon: mdi:sofa
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .9), rgba(0, 119, 255, .2)), bottom / cover no-repeat url("/local/images/living.jpg") fixed
+    path: living
+    cards:
+      - type: custom:decluttering-card
+        template: room
+        variables:
+          - room: living
+          - title: Wohnzimmer
+
+button_card_templates: !include_dir_named ../button_card_templates
+decluttering_templates: !include_dir_named ../decluttering_templates

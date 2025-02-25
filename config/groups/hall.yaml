@@ -1,0 +1,7 @@
+hall:
+  name: Flur
+  icon: mdi:door
+  entities:
+    - light.hall_ceiling_1
+    - switch.hall_adaptive_lighting
+    - binary_sensor.hall_motion_1

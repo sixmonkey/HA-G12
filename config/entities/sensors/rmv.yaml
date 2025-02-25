@@ -1,0 +1,12 @@
+platform: rmvtransport
+next_departure:
+  - station: !secret rmv_station_id
+    direction: 'Darmstadt Hauptbahnhof'
+    products:
+      - 'Bus'
+    name: 'Bus Richtung Hauptbahnhof'
+  - station: !secret rmv_station_id
+    direction: 'Darmstadt-Kranichstein Kesselhutweg'
+    products:
+      - 'Bus'
+    name: 'Bus Richtung Kranichstein'

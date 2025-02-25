@@ -1,0 +1,52 @@
+template: entity_button
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      browser_id: THIS
+      title: '[[[ return entity.attributes.friendly_name ]]]'
+      size: fullscreen
+      card_mod:
+        style:
+          .: |
+            :host([fullscreen]) .content {
+              width: 400px !important;
+              max-width: 90vw;
+              margin: 0 auto !important;
+             }
+      content:
+        type: 'custom:mod-card'
+        card_mod:
+          style:
+            layout-card$:
+              grid-layout$: |
+                :host {
+                  padding: 0px !important;
+                }
+                #root {
+                  gap: 16px 16px !important;
+                  margin: 0px !important;
+                }
+                #root > * {
+                  margin: 0px !important;
+                }
+        card:
+          type: custom:auto-entities
+          card:
+            type: vertical-stack
+          card_param: cards
+          show_empty: false
+          filter:
+            include:
+              - entity_id: 'media_player.spotify'
+                options:
+                  type: media-control
+              - entity_id: 'media_player.*_snapcast_group'
+                domain: media_player
+                options:
+                  type: custom:slider-entity-row
+
+          sort:
+            method: attribute
+            attribute: order

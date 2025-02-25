@@ -1,0 +1,8 @@
+# zones
+zone.home:
+  radius: 10
+
+# lights
+light.living_desk_2:
+  name: "Häuschen"
+  icon: mdi:home

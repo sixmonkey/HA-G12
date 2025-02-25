@@ -1,0 +1,27 @@
+id: living_dimmed
+name: living_dimmed
+entities:
+  light.living_ceiling_1:
+    state: false
+    brightness: 1
+    color_mode: color_temp
+    color_temp: 454
+
+  light.living_desk_2:
+    state: true
+
+  light.living_desk_1:
+    state: true
+    brightness: 1
+
+  light.living_wall_1:
+    state: true
+    brightness: 1
+    color_mode: "rgb"
+    rgb_color:
+      - 0
+      - 0
+      - 255
+
+  switch.living_adaptive_lighting:
+    state: false

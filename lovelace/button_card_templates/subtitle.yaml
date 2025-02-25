@@ -1,0 +1,15 @@
+styles:
+  card:
+    - background: transparent
+    - box-shadow: none
+    - padding: 0px 0px 8px 0px
+    - font-size: 1.4rem
+    - border: none
+    - overflow: visible
+  grid:
+    - display: block
+    - position: relative
+    - text-align: left
+  name:
+    - justify-self: start
+    - color: var(--krehome-white-color)

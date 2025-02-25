@@ -1,0 +1,9 @@
+*
+!.gitignore
+!/config/
+!/config/**
+!/lovelace/
+!/lovelace/**
+!configuration.yaml
+!ui-lovelace.yaml
+.DS_Store

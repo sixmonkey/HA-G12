@@ -1,0 +1,69 @@
+# scenes
+"scene.*_dark":
+  icon: mdi:brightness-2
+  friendly_name: schummrig
+"scene.*_dimmed":
+  icon: mdi:brightness-4
+  friendly_name: gedimmt
+"scene.*_lit":
+  icon: mdi:brightness-6
+  friendly_name: erleuchtet
+"scene.*_bright":
+  icon: mdi:brightness-7
+  friendly_name: hell
+"scene.*_brighter":
+  icon: mdi:brightness-5
+  friendly_name: heller
+
+# lights
+"light.*_ceiling*":
+  friendly_name: Decke
+  icon: mdi:ceiling-light
+  order: 1
+"light.*_floor*":
+  friendly_name: Stehlampe
+  icon: phu:regolit-arc-lamp
+  order: 4
+"light.*_wall*":
+  friendly_name: Wandlampe
+  icon: mdi:wall-sconce-round
+  order: 5
+"light.*_desk*":
+  friendly_name: Lampe
+  icon: mdi:lamp
+  order: 3
+"light.*_spot*":
+  icon: mdi:light-recessed
+  order: 2
+
+# covers
+"cover.*_cover*":
+  friendly_name: Jalousie
+
+# sensors
+"binary_sensor.*_motion":
+  friendly_name: Bewegungsmelder
+"binary_sensor.*_motion*":
+  friendly_name: Bewegungsmelder
+"binary_sensor.*_door":
+  friendly_name: Tür
+  device_class: door
+
+"sensor.*_pressure":
+  friendly_name: Luftdruck
+"sensor.*_humidity":
+  friendly_name: Luftfeuchtigkeit
+"sensor.*_temperature":
+  friendly_name: Temperatur
+"sensor.*_luminance":
+  friendly_name: Helligkeit
+"sensor.*_lightlevel":
+  friendly_name: Helligkeit
+
+"media_player.*_kodi":
+  friendly_name: Fernseher
+  icon: mdi:television-classic
+"media_player.*_snapcast_client":
+  icon: mdi:speaker
+"media_player.*_snapcast_group":
+  icon: mdi:speaker-wireless

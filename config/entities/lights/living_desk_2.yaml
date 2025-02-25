@@ -1,0 +1,13 @@
+platform: template
+lights:
+  living_desk_2:
+    friendly_name: "Häuschen"
+    value_template: "{{ states.switch.living_desk_2.state }}"
+    turn_on:
+      service: switch.turn_on
+      data:
+        entity_id: switch.living_desk_2
+    turn_off:
+      service: switch.turn_off
+      data:
+        entity_id: switch.living_desk_2

@@ -1,0 +1,10 @@
+ios:
+  actions:
+      - name: open_front_door
+        background_color: "#000000"
+        label:
+          text: "Sesam öffne dich"
+          color: "#ff0000"
+        icon:
+          icon: earth
+          color: "#ffffff"
