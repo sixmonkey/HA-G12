@@ -1,0 +1,10 @@
+*
+!.gitignore
+!/config/
+!/config/**
+!/lovelace/
+!/lovelace/**
+!configuration.yaml
+!ui-lovelace.yaml
+!secrets.example.yaml
+.DS_Store

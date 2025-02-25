@@ -1,0 +1,7 @@
+template: base_button
+show_state: true
+state:
+  - value: 'off'
+    styles:
+      card:
+        - filter: opacity(70%)

@@ -1,0 +1,107 @@
+default:
+  title: 'Küche'
+  room: 'kitchen'
+card:
+  type: vertical-stack
+  cards:
+  - type: custom:button-card
+    name: '[[title]]'
+    template: title
+
+
+
+  - type: custom:auto-entities
+    card:
+      type: grid
+      columns: 7
+    card_param: cards
+    show_empty: false
+    filter:
+      include:
+        - domain: sensor
+          group: 'group.[[room]]'
+          options:
+            type: custom:button-card
+            template: sensor
+        - domain: binary_sensor
+          group: 'group.[[room]]'
+          options:
+            type: custom:button-card
+            template: binary_sensor
+    sort:
+      method: attribute
+      attribute: order
+
+  - type: custom:auto-entities
+    card:
+      type: grid
+      title: 'Szenen'
+    card_param: cards
+    show_empty: false
+    filter:
+      include:
+        - entity_id: 'switch.scene_[[room]]*'
+          options:
+            type: custom:button-card
+            template: entity_button
+    sort:
+      method: attribute
+      attribute: order
+
+  - type: custom:auto-entities
+    card:
+      type: grid
+      title: 'Mediaplayer'
+    card_param: cards
+    show_empty: false
+    filter:
+      include:
+        - entity_id: 'media_player.*_kodi'
+          domain: media_player
+          group: 'group.[[room]]'
+          options:
+            type: custom:button-card
+            template: kodi_button
+        - entity_id: 'media_player.*_snapcast_group'
+          domain: media_player
+          group: 'group.[[room]]'
+          options:
+            type: custom:button-card
+            template: snapcast_button
+            name: 'Musik'
+    sort:
+      method: attribute
+      attribute: order
+
+  - type: custom:auto-entities
+    card:
+      type: grid
+      title: 'Jalousien'
+    card_param: cards
+    show_empty: false
+    filter:
+      include:
+        - group: 'group.[[room]]'
+          domain: cover
+          options:
+            type: custom:button-card
+            template: cover_button
+
+
+  - type: custom:auto-entities
+    card:
+      type: grid
+      title: 'Lampen'
+    card_param: cards
+    sort:
+      method: attribute
+      attribute: order
+    show_empty: false
+    filter:
+      include:
+        - group: 'group.[[room]]'
+          domain: light
+          options:
+            type: custom:button-card
+            template: light_button
+

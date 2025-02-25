@@ -1,0 +1,30 @@
+template: entity_button
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      browser_id: THIS
+      title: '[[[ return entity.attributes.friendly_name ]]]'
+      size: fullscreen
+      content:
+        type: custom:cover-popup-card
+        entity: '[[[ return entity.entity_id ]]]'
+        sliderService: cover.set_cover_position
+        actionsInARow: 3
+        actions:
+          - service: cover.open_cover
+            service_data:
+              entity_id: this
+            name: open
+            icon: mdi:arrow-up
+          - service: cover.stop_cover
+            service_data:
+              entity_id: this
+            name: close
+            icon: mdi:stop
+          - service: cover.close_cover
+            service_data:
+              entity_id: this
+            name: close
+            icon: mdi:arrow-down

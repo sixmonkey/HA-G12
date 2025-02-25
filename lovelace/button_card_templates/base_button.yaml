@@ -1,0 +1,32 @@
+size: 100%
+show_state: false
+aspect_ratio: 1/1
+styles:
+  card:
+    - padding: 10%
+  grid:
+    - grid-template-areas: '"i" "n" "s"'
+    - grid-template-columns: 1fr
+    - grid-template-rows: 1fr min-content min-content
+  img_cell:
+    - justify-content: start
+    - align-items: start
+  icon:
+    - width: 40%
+    - height: 40%
+  name:
+    - font-size: 12px
+    - font-weight: 500
+    - justify-self: start
+    - text-overflow: ellipsis
+    - white-space: nowrap
+    - overflow: hidden
+    - max-width: 80%
+  state:
+    - font-size: 10px
+    - font-weight: 300
+    - max-width: 80%
+    - justify-self: end
+    - text-overflow: ellipsis
+    - white-space: nowrap
+    - overflow: hidden

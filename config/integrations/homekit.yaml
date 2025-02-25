@@ -1,0 +1,5 @@
+homekit:
+  filter:
+    include_entity_globs:
+      - switch.scene_*
+      - scene.*

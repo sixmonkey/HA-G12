@@ -1,0 +1,15 @@
+template: binary_sensor
+show_name: true
+name: |
+  [[[  
+      var test = parseFloat(parseInt(entity.state));
+  
+        if(isNaN(test)) {
+            return entity.state ?? 'N/A';
+        }
+      return `<span style="font-weight:800">${test}</span><span style="font-size:.5em">${entity.attributes.unit_of_measurement}</span>`;
+  ]]]
+styles:
+  icon:
+    - width: 70%
+    - height: 70%

@@ -1,0 +1,24 @@
+living:
+  name: Wohnzimmer
+  icon: mdi:sofa
+  entities:
+    - scene.living_dark
+    - scene.living_dimmed
+    - scene.living_lit
+    - scene.living_bright
+    - scene.living_brighter
+
+    - light.living_ceiling_1
+    - light.living_wall_1
+    - light.living_desk_1
+    - light.living_desk_2
+
+    - sensor.living_remote_1_battery
+    - sensor.living_temperature
+    - sensor.living_humidity
+    - sensor.living_pressure
+    - sensor.living_illuminance
+
+    - binary_sensor.living_door
+
+    - switch.living_adaptive_lighting

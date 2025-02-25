@@ -1,0 +1,264 @@
+template: entity_button
+tap_action:
+  action: fire-dom-event
+  browser_mod:
+    service: browser_mod.popup
+    data:
+      browser_id: THIS
+      title: '[[[ return entity.attributes.friendly_name ]]]'
+      size: fullscreen
+      card_mod:
+        style:
+          .: |
+            :host([fullscreen]) .content {
+              width: 400px !important;
+              max-width: 90vw;
+              margin: 0 auto !important;
+             }
+      content:
+        type: 'custom:mod-card'
+        card_mod:
+          style:
+            layout-card$:
+              grid-layout$: |
+                :host {
+                  padding: 0px !important;
+                }
+                #root {
+                  gap: 16px 16px !important;
+                  margin: 0px !important;
+                }
+                #root > * {
+                  margin: 0px !important;
+                }
+        card:
+          type: custom:layout-card
+          layout_type: grid
+          layout:
+            grid-template-columns: repeat(12, 1fr)
+            grid-template-areas: |
+                "play play play stop stop stop . . . power power power"
+                "home home home home up up up up info info info info"
+                "left left left left ok ok ok ok right right right right"
+                "back back back back down down down down list list list list"
+                "volume volume volume volume volume volume volume volume volume volume volume volume"
+                "tv tv tv prime prime prime netflix netflix netflix disney disney disney"
+          cards:
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:power-standby
+              view_layout:
+                grid-area: power
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:home
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Home
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: home
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:chevron-up
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Up
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: up
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:information-variant
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Info
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: info
+
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:chevron-left
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Left
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: left
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:circle
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Select
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: ok
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:chevron-right
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Right
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: right
+
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:arrow-u-left-top
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Back
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: back
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:chevron-down
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.Down
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: down
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:format-list-bulleted
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: Input.List
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: list
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:television-classic
+              view_layout:
+                grid-area: tv
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: GUI.ActivateWindow
+                  window: TVChannels
+                  entity_id: '[[[ return entity.entity_id ]]]'
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: phu:prime-video
+              view_layout:
+                grid-area: prime
+              tap_action:
+                action: call-service
+                service: kodi.call_method
+                service_data:
+                  method: GUI.ActivateWindow
+                  window: Videos
+                  parameters:
+                    - "plugin://plugin.video.amazon-test"
+                    - "return"
+                  entity_id: '[[[ return entity.entity_id ]]]'
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: phu:netflix
+              view_layout:
+                grid-area: netflix
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: phu:disney-plus
+              view_layout:
+                grid-area: disney
+
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: '[[[ return entity.state === "playing" ? "mdi:pause" : "mdi:play" ]]]'
+              tap_action:
+                action: call-service
+                service: media_player.media_play_pause
+                service_data:
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: play
+
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: mdi:stop
+              tap_action:
+                action: call-service
+                service: media_player.media_stop
+                service_data:
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: stop
+
+
+            - type: custom:button-card
+              template: media_button
+              entity: '[[[ return entity.entity_id ]]]'
+              icon: '[[[ return entity.state.is_volume_muted ? "mdi:volume-high" : "mdi:volume-off" ]]]'
+              tap_action:
+                action: call-service
+                service: media_player.mute_volume
+                service_data:
+                  entity_id: '[[[ return entity.entity_id ]]]'
+              view_layout:
+                grid-area: mute
+
+
+            - type: custom:slider-entity-row
+              entity: '[[[ return entity.entity_id ]]]'
+              toggle: true
+              hide_state: true
+              full_row: true
+              view_layout:
+                grid-area: volume

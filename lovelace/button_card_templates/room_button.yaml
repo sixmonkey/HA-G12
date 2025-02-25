@@ -1,0 +1,9 @@
+template: base_button
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/0
+styles:
+  grid:
+    - grid-template-areas: '"i" "s" "n"'
+  state:
+    - visibility: 'hidden'

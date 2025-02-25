@@ -1,0 +1,40 @@
+lovelace:
+  mode: yaml
+  resources:
+    - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+      type: module
+    - url: /hacsfiles/lovelace-card-mod/card-mod.js
+      type: module
+    - url: /hacsfiles/hass-swipe-navigation/swipe-navigation.js
+      type: module
+    - url: /hacsfiles/button-card/button-card.js
+      type: module
+    - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+      type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
+    - url: /hacsfiles/decluttering-card/decluttering-card.js
+      type: module
+    - url: /hacsfiles/lovelace-card-tools/card-tools.js
+      type: module
+    - url: /hacsfiles/lovelace-clock-card/clock-card.js
+      type: module
+    - url: /hacsfiles/themable-grid/themable-grid.js
+      type: module
+
+
+  dashboards:
+    lovelace-home:
+      mode: yaml
+      filename: /config/lovelace/dashboards/home.yaml
+      title: Home
+      icon: mdi:house
+      show_in_sidebar: true
+
+    lovelace-generated:
+      mode: yaml
+      filename: none.yaml
+      title: Generated
+      icon: mdi:tools
+      show_in_sidebar: true
+      require_admin: true

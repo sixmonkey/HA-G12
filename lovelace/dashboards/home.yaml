@@ -1,0 +1,52 @@
+title: Home
+
+
+
+themable_grid:
+  padding: 0
+  gap: 8px
+  breakpoints:
+    - name: mobile
+      mq: '(max-width: 767px)'
+      columns: 3
+    - name: desktop
+      mq: '(min-width: 1024px)'
+      columns: 6
+
+views:
+  - icon: mdi:sofa
+    cards:
+    - type: custom:button-card
+      name: 'Räume'
+      template: subtitle
+    - type: custom:auto-entities
+      card:
+        type: 'custom:themable-grid'
+        padding: 0
+        gap: 8px
+        breakpoints:
+          - name: mobile
+            mq: '(max-width: 767px)'
+            columns: 3
+          - name: tablet
+            mq: '(min-width: 768px) and (max-width: 1023px)'
+            columns: 3
+          - name: desktop
+            mq: '(min-width: 1024px)'
+            columns: 6
+      card_param: cards
+      show_empty: false
+      filter:
+        include:
+          - domain: group
+            options:
+              type: custom:button-card
+              template: room_button
+      sort:
+        method: attribute
+        attribute: order
+
+
+
+button_card_templates: !include_dir_named ../button_card_templates
+decluttering_templates: !include_dir_named ../decluttering_templates
